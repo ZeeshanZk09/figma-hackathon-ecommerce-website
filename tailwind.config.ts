@@ -1,3 +1,4 @@
+// import { satoshiRegular } from "@/app/layout";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -8,6 +9,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        clashDisplay: ['var(--clashDisplay-extralight)'],
+        satoshiRegular: ['var(--satoshi-regular)'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

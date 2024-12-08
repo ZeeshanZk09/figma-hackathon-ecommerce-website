@@ -1,11 +1,58 @@
+import Link from "next/link";
 import React from "react";
+
+interface TypeNavLinks {
+  label: string;
+  path: string;
+  id: number;
+}
+
+const navLinks: TypeNavLinks[] = [
+  {
+    label: "Plant pots",
+    path: "/",
+    id: Math.random() * 100,
+  },
+  {
+    label: "Ceramics",
+    path: "/",
+    id: Math.random() * 100,
+  },
+  {
+    label: "Tables",
+    path: "/",
+    id: Math.random() * 100,
+  },
+  {
+    label: "Chairs",
+    path: "/",
+    id: Math.random() * 100,
+  },
+  {
+    label: "Crockery",
+    path: "/",
+    id: Math.random() * 100,
+  },
+  {
+    label: "Tableware",
+    path: "/",
+    id: Math.random() * 100,
+  },
+  {
+    label: "Cultery",
+    path: "/",
+    id: Math.random() * 100,
+  },
+];
 
 const HeaderForHome = () => {
   return (
-    <header className="bg-white py-5 px-7 w-screen">
-      <nav className="flex justify-between items-center w-full">
+    <header className="bg-white md:h-[132px] md:py-5 md:px-4 w-screen md:gap-5 md:flex md:flex-col overflow-hidden">
+      {/* For Desktop and tablet screens */}
+      <nav className="hidden md:flex md:justify-between md:items-center w-full">
         <div>
           <svg
+            className={`w-4 h-4`}
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -24,9 +71,12 @@ const HeaderForHome = () => {
             />
           </svg>
         </div>
-        <div className='font-clash '>Avion</div>
+        <h2 className={`font-clashDisplay text-2xl font-normal text-[#22202E]`}>
+          Avion
+        </h2>
         <div className="flex justify-between items-center gap-8">
           <svg
+            className={`w-4 h-4`}
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -53,6 +103,7 @@ const HeaderForHome = () => {
             />
           </svg>
           <svg
+            className={`w-4 h-4`}
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -77,7 +128,66 @@ const HeaderForHome = () => {
         </div>
       </nav>
       <hr />
-      <nav className="flex justify-between items-center w-full"></nav>
+      <nav className="hidden w-full md:flex md:justify-center md:items-center md:h-6">
+        <div className="w-2/3 flex justify-center space-x-14">
+          {navLinks.map(({ label, path, id }) => (
+            <ul key={id}>
+              <li>
+                <Link
+                  href={path}
+                  className="font-satoshiRegular text-[#726E8D] text-base font-normal"
+                >
+                  {label}
+                </Link>
+              </li>
+            </ul>
+          ))}
+        </div>
+      </nav>
+      {/* for mobile screens */}
+      <nav className="md:hidden h-16 px-6 flex bg-white justify-between items-center">
+        <h2 className="text-2xl font-clashDisplay  font-normal text-[#22202E]">Avion</h2>
+        <div className="flex items-center gap-5">
+          <svg
+            className={`w-4 h-4`}
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="24"
+              height="24"
+              fill="white"
+              className="mix-blend-mode-multiply"
+            />
+            <path
+              d="M21.7499 20.6894L16.0859 15.0254C17.4469 13.3914 18.1256 11.2956 17.9808 9.17395C17.8359 7.05231 16.8787 5.06819 15.3082 3.63434C13.7378 2.20048 11.675 1.42729 9.54894 1.4756C7.42292 1.52391 5.39736 2.39001 3.89365 3.89372C2.38993 5.39744 1.52384 7.42299 1.47552 9.54902C1.42721 11.675 2.20041 13.7378 3.63426 15.3083C5.06812 16.8788 7.05224 17.836 9.17387 17.9808C11.2955 18.1257 13.3913 17.447 15.0253 16.0859L20.6894 21.75L21.7499 20.6894ZM2.99993 9.75001C2.99993 8.41499 3.39581 7.10994 4.13751 5.99991C4.87921 4.88988 5.93342 4.02471 7.16682 3.51382C8.40022 3.00293 9.75742 2.86926 11.0668 3.12971C12.3762 3.39016 13.5789 4.03303 14.5229 4.97704C15.4669 5.92104 16.1098 7.12378 16.3702 8.43315C16.6307 9.74252 16.497 11.0997 15.9861 12.3331C15.4752 13.5665 14.6101 14.6207 13.5 15.3624C12.39 16.1041 11.085 16.5 9.74993 16.5C7.96033 16.498 6.2446 15.7862 4.97916 14.5208C3.71371 13.2553 3.00192 11.5396 2.99993 9.75001Z"
+              fill="#2A254B"
+            />
+          </svg>
+          <svg
+            className="w-4 h-4"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              width="16"
+              height="16"
+              fill="white"
+              className="mix-blend-mode-multiply"
+            />
+            <path d="M14 3H2V4H14V3Z" fill="#2A254B" />
+            <path d="M14 12H2V13H14V12Z" fill="#2A254B" />
+            <path d="M14 6H2V7H14V6Z" fill="#2A254B" />
+            <path d="M14 9H2V10H14V9Z" fill="#2A254B" />
+          </svg>
+        </div>
+      </nav>
     </header>
   );
 };

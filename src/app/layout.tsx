@@ -3,23 +3,20 @@ import localFont from "next/font/local";
 import "./globals.css";
 import HeaderForHome from "@/components/HeaderForHome";
 
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-const clashDisplayBold = localFont({
-  src: "./../../public/fonts/ClashDisplay-Bold.eot",
-  variable: "--ClashDisplay-Bold",
+
+export const clashDisplayExtralight = localFont({
+  src: "./fonts/ClashDisplay-Extralight.woff",
+  variable: "--clashDisplay-extralight",
   style: "normal",
   weight: "100 900",
 });
 
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
+export const satoshiRegular = localFont({
+  src: "./fonts/Satoshi-Regular.woff",
+  variable: "--satoshi-regular",
+  style: "normal",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -31,12 +28,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     <html lang="en">
       <body
-        className={`${clashDisplayBold.variable} ${geistMono.variable} antialiased`}
+        className={`${satoshiRegular.variable} ${clashDisplayExtralight.variable}  antialiased`}
       >
-        <HeaderForHome />
+        <HeaderForHome  />
         {children}
       </body>
     </html>
