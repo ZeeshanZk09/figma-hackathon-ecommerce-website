@@ -4,14 +4,14 @@ import "./globals.css";
 import HeaderForHome from "@/components/HeaderForHome";
 
 
-export const clashDisplayExtralight = localFont({
+ const clashDisplayExtralight = localFont({
   src: "./fonts/ClashDisplay-Extralight.woff",
   variable: "--clashDisplay-extralight",
   style: "normal",
   weight: "100 900",
 });
 
-export const satoshiRegular = localFont({
+ const satoshiRegular = localFont({
   src: "./fonts/Satoshi-Regular.woff",
   variable: "--satoshi-regular",
   style: "normal",
