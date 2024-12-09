@@ -3,8 +3,8 @@ import React from "react";
 
 const HeroSection = () => {
   return (
-    <section className="md:bg-white w-screen h-screen md:flex md:justify-center md:items-center md:px-20 md:py-16 overflow-x-hidden">
-      <div className="hidden  md:flex h-[36.5rem] bg-[#2A254B] md:w-[60rem]  overflow-hidden xl:w-[80rem]  justify-between  text-white ">
+    <section className="md:bg-white w-screen h-screen md:flex md:justify-center md:items-center md:px-20 md:py-16 overflow-hidden">
+      <div className="hidden  md:flex overflow-hidden h-[36.5rem] bg-[#2A254B] md:w-[60rem]   xl:w-[80rem]  justify-between  text-white ">
         <div className="flex flex-col h-full p-16 ">
           <div className="flex flex-col md:w-[16.0625rem] xl:w-[32.0625rem]  justify-start gap-10">
             <h2 className="font-clashDisplay font-normal text-4xl">
